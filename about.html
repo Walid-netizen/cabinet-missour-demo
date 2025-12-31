@@ -95,114 +95,130 @@
 
 
 
-    <main class="pt-32 pb-20">
+    <main>
+        <!-- About Hero (Unified) -->
+        <section class="hero-bg relative min-h-[50vh] flex items-center pt-32 pb-20 overflow-hidden text-center">
+            <!-- Background Elements (Subtle) -->
+            <div
+                class="absolute right-0 top-1/4 w-[600px] h-[600px] bg-blue-500/20 rounded-full blur-[120px] -z-10 animate-float">
+            </div>
 
-        <section class="relative mb-20">
-            <div class="container text-center">
-                <span class="text-blue-600 font-bold tracking-wider uppercase text-sm">Le Cabinet</span>
-                <h1 class="text-5xl font-extrabold text-slate-900 mt-4 mb-4">Qui sommes-nous ?</h1>
-                <div class="h-1.5 w-24 bg-gradient-to-r from-blue-500 to-cyan-400 mx-auto rounded-full"></div>
+            <div class="container relative z-10">
+                <span
+                    class="inline-block py-2 px-6 rounded-full bg-white/10 backdrop-blur-md text-blue-300 font-bold text-sm tracking-wider mb-6 border border-white/20 shadow-lg">
+                    Le Cabinet
+                </span>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6 drop-shadow-lg">
+                    Qui sommes-nous ?
+                </h1>
+                <div class="h-1.5 w-24 bg-gradient-to-r from-blue-400 to-cyan-300 mx-auto rounded-full shadow-lg"></div>
             </div>
         </section>
 
-        <section class="mb-24">
-            <div class="container grid grid-cols-2 gap-20 items-center">
-                <div data-aos="fade-right" class="relative group">
-                    <div
-                        class="absolute inset-0 bg-blue-600 rounded-[3rem] rotate-6 opacity-10 group-hover:rotate-3 transition-transform duration-500">
-                    </div>
-                    <img src="doctor-portrait.png" alt="Dr Alami" width="500" height="600"
-                        class="rounded-[3rem] shadow-2xl w-full h-auto relative z-10 border-8 border-white transform -rotate-3 group-hover:rotate-0 transition-transform duration-500">
+        <section class="py-24 relative z-20">
 
-                    <!-- Exp Badge -->
-                    <div class="absolute -right-8 bottom-20 glass-panel p-6 z-20 animate-float"
-                        style="animation-duration: 4s;">
-                        <span class="block text-4xl font-extrabold text-blue-600">15+</span>
-                        <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Années
-                            d'expérience</span>
-                    </div>
-                </div>
-
-                <div data-aos="fade-left">
-                    <h2 class="text-4xl font-bold text-slate-900 mb-2">Dr. Mohammed Alami</h2>
-                    <h3 class="text-xl text-blue-600 font-medium mb-8">Médecin Généraliste</h3>
-
-                    <div class="glass-panel p-8 space-y-6 text-slate-600 leading-relaxed relative overflow-hidden">
-                        <div class="absolute top-0 right-0 p-4 opacity-5">
-                            <i data-lucide="quote" class="w-32 h-32"></i>
-                        </div>
-                        <p>
-                            Le Dr. Mohammed Alami est diplômé de la Faculté de Médecine et de Pharmacie de Rabat. Fort
-                            de plus de 15 années d'expérience en médecine générale et d'urgence, il s’est installé à
-                            Missour avec pour mission d’offrir des soins de proximité et de qualité à tous ses patients.
-                        </p>
-                        <p>
-                            Sa pratique est fondée sur l'écoute active, le respect du patient et une approche globale de
-                            la santé. Il assure le suivi des maladies chroniques, la santé de l'enfant et de l'adulte,
-                            ainsi que les urgences médicales courantes.
-                        </p>
-                        <p class="font-medium text-slate-800">
-                            Le cabinet est équipé de matériel moderne (ECG, échographe) permettant des diagnostics
-                            rapides et précis sur place.
-                        </p>
-                    </div>
-
-                    <div class="mt-8 flex gap-8">
-                        <div>
-                            <span class="block text-3xl font-bold text-slate-900">5000+</span>
-                            <span class="text-sm text-slate-500 font-medium">Patients suivis</span>
-                        </div>
-                        <div class="w-px bg-slate-200"></div>
-                        <div>
-                            <span class="block text-3xl font-bold text-slate-900">100%</span>
-                            <span class="text-sm text-slate-500 font-medium">Engagement</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Gallery -->
-        <section class="py-20 relative overflow-hidden">
-            <!-- Background Decor -->
-            <div class="absolute inset-0 bg-blue-50/50 -skew-y-3 transform origin-top-left -z-10"></div>
-
-            <div class="container">
-                <div class="text-center mb-16" data-aos="fade-up">
-                    <h2 class="text-3xl font-bold text-slate-900">Nos Locaux</h2>
-                    <p class="text-slate-500 mt-2">Un environnement conçu pour votre confort et votre sécurité.</p>
-                </div>
-
-                <div class="grid grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="200">
-                    <div class="group relative rounded-2xl overflow-hidden shadow-lg border-4 border-white">
+            <section class="mb-24">
+                <div class="container grid grid-cols-2 gap-20 items-center">
+                    <div data-aos="fade-right" class="relative group">
                         <div
-                            class="absolute inset-0 bg-blue-900/0 group-hover:bg-blue-900/20 transition-colors z-10 transition-all duration-500">
+                            class="absolute inset-0 bg-blue-600 rounded-[3rem] rotate-6 opacity-10 group-hover:rotate-3 transition-transform duration-500">
                         </div>
-                        <img src="clinic-exterior.png" alt="Extérieur du cabinet médical" width="400" height="300"
-                            loading="lazy"
-                            class="h-72 w-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <img src="doctor-portrait.png" alt="Dr Alami" width="500" height="600"
+                            class="rounded-[3rem] shadow-2xl w-full h-auto relative z-10 border-8 border-white transform -rotate-3 group-hover:rotate-0 transition-transform duration-500">
+
+                        <!-- Exp Badge -->
+                        <div class="absolute -right-8 bottom-20 glass-panel p-6 z-20 animate-float"
+                            style="animation-duration: 4s;">
+                            <span class="block text-4xl font-extrabold text-blue-600">15+</span>
+                            <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Années
+                                d'expérience</span>
+                        </div>
                     </div>
 
-                    <div class="group relative rounded-2xl overflow-hidden shadow-lg border-4 border-white mt-8">
-                        <div
-                            class="absolute inset-0 bg-blue-900/0 group-hover:bg-blue-900/20 transition-colors z-10 transition-all duration-500">
-                        </div>
-                        <img src="clinic-interior.png" alt="Salle d'attente confortable" width="400" height="300"
-                            loading="lazy"
-                            class="h-72 w-full object-cover transform group-hover:scale-110 transition-transform duration-700">
-                    </div>
+                    <div data-aos="fade-left">
+                        <h2 class="text-4xl font-bold text-slate-900 mb-2">Dr. Mohammed Alami</h2>
+                        <h3 class="text-xl text-blue-600 font-medium mb-8">Médecin Généraliste</h3>
 
-                    <div class="group relative rounded-2xl overflow-hidden shadow-lg border-4 border-white">
-                        <div
-                            class="absolute inset-0 bg-blue-900/0 group-hover:bg-blue-900/20 transition-colors z-10 transition-all duration-500">
+                        <div class="glass-panel p-8 space-y-6 text-slate-600 leading-relaxed relative overflow-hidden">
+                            <div class="absolute top-0 right-0 p-4 opacity-5">
+                                <i data-lucide="quote" class="w-32 h-32"></i>
+                            </div>
+                            <p>
+                                Le Dr. Mohammed Alami est diplômé de la Faculté de Médecine et de Pharmacie de Rabat.
+                                Fort
+                                de plus de 15 années d'expérience en médecine générale et d'urgence, il s’est installé à
+                                Missour avec pour mission d’offrir des soins de proximité et de qualité à tous ses
+                                patients.
+                            </p>
+                            <p>
+                                Sa pratique est fondée sur l'écoute active, le respect du patient et une approche
+                                globale de
+                                la santé. Il assure le suivi des maladies chroniques, la santé de l'enfant et de
+                                l'adulte,
+                                ainsi que les urgences médicales courantes.
+                            </p>
+                            <p class="font-medium text-slate-800">
+                                Le cabinet est équipé de matériel moderne (ECG, échographe) permettant des diagnostics
+                                rapides et précis sur place.
+                            </p>
                         </div>
-                        <img src="clinic-interior.png" alt="Salle de consultation moderne" width="400" height="300"
-                            loading="lazy"
-                            class="h-72 w-full object-cover transform group-hover:scale-110 transition-transform duration-700 filter brightness-110">
+
+                        <div class="mt-8 flex gap-8">
+                            <div>
+                                <span class="block text-3xl font-bold text-slate-900">5000+</span>
+                                <span class="text-sm text-slate-500 font-medium">Patients suivis</span>
+                            </div>
+                            <div class="w-px bg-slate-200"></div>
+                            <div>
+                                <span class="block text-3xl font-bold text-slate-900">100%</span>
+                                <span class="text-sm text-slate-500 font-medium">Engagement</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+
+            <!-- Gallery -->
+            <section class="py-20 relative overflow-hidden">
+                <!-- Background Decor -->
+                <div class="absolute inset-0 bg-blue-50/50 -skew-y-3 transform origin-top-left -z-10"></div>
+
+                <div class="container">
+                    <div class="text-center mb-16" data-aos="fade-up">
+                        <h2 class="text-3xl font-bold text-slate-900">Nos Locaux</h2>
+                        <p class="text-slate-500 mt-2">Un environnement conçu pour votre confort et votre sécurité.</p>
+                    </div>
+
+                    <div class="grid grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="200">
+                        <div class="group relative rounded-2xl overflow-hidden shadow-lg border-4 border-white">
+                            <div
+                                class="absolute inset-0 bg-blue-900/0 group-hover:bg-blue-900/20 transition-colors z-10 transition-all duration-500">
+                            </div>
+                            <img src="clinic-exterior.png" alt="Extérieur du cabinet médical" width="400" height="300"
+                                loading="lazy"
+                                class="h-72 w-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        </div>
+
+                        <div class="group relative rounded-2xl overflow-hidden shadow-lg border-4 border-white mt-8">
+                            <div
+                                class="absolute inset-0 bg-blue-900/0 group-hover:bg-blue-900/20 transition-colors z-10 transition-all duration-500">
+                            </div>
+                            <img src="clinic-interior.png" alt="Salle d'attente confortable" width="400" height="300"
+                                loading="lazy"
+                                class="h-72 w-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        </div>
+
+                        <div class="group relative rounded-2xl overflow-hidden shadow-lg border-4 border-white">
+                            <div
+                                class="absolute inset-0 bg-blue-900/0 group-hover:bg-blue-900/20 transition-colors z-10 transition-all duration-500">
+                            </div>
+                            <img src="clinic-interior.png" alt="Salle de consultation moderne" width="400" height="300"
+                                loading="lazy"
+                                class="h-72 w-full object-cover transform group-hover:scale-110 transition-transform duration-700 filter brightness-110">
+                        </div>
+                    </div>
+                </div>
+            </section>
 
     </main>
 

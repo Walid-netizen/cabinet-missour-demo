@@ -23,9 +23,8 @@ body {
         radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.05) 0px, transparent 50%);
     background-attachment: fixed;
     line-height: 1.6;
-    min-width: 1280px;
-    /* Force Desktop */
-    overflow-x: auto;
+    /* Responsive */
+    overflow-x: hidden;
 }
 
 /* Typography Overrides */
@@ -206,4 +205,75 @@ h6 {
 .modal-overlay-blur {
     background: rgba(15, 23, 42, 0.4);
     backdrop-filter: blur(8px);
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    /* Layout Stacking */
+    .container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    .grid-cols-2,
+    .grid-cols-3 {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Hero Section */
+    section.min-h-\[85vh\] {
+        min-height: auto;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    /* Typography Reductions */
+    .text-6xl {
+        font-size: 2.5rem !important;
+        line-height: 1.2;
+    }
+
+    .text-5xl {
+        font-size: 2rem !important;
+    }
+
+    .text-4xl {
+        font-size: 1.75rem !important;
+    }
+
+    /* Header Adjustments */
+    .glass-header .container {
+        height: auto;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    /* Hide Desktop Nav & CTA */
+    .glass-header nav,
+    .glass-header .btn-modern {
+        display: none;
+    }
+
+    /* Mobile Menu Button (Will be injected by JS) */
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    /* Adjust padding for sections */
+    section {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+
+    /* WhatsApp Float Position */
+    .whatsapp-float-modern {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        width: 3.5rem;
+        height: 3.5rem;
+    }
 }

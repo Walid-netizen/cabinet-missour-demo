@@ -140,6 +140,8 @@ body {
     border-radius: 1rem;
     border: 1px solid #cbd5e1;
     background: rgba(255, 255, 255, 0.8);
+    color: #1e293b;
+    /* Fix: Dark text on light background */
     transition: all 0.3s ease;
     outline: none;
 }

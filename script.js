@@ -1,4 +1,4 @@
-// Cabinet Missour - Classic Script logic
+// Cabinet Missour - Modern Script Logic
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -12,36 +12,33 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Simple Mobile Menu Toggle
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-    }
-
     // Modal Logic
     const modal = document.getElementById('booking-modal');
     const closeModalBtn = document.getElementById('close-modal');
     const bookingForm = document.getElementById('booking-form');
     const serviceInput = document.getElementById('service-input');
+    const contactForm = document.getElementById('contact-form');
 
-    // Open Modal
-    const bookButtons = document.querySelectorAll('.book-btn');
+    // Open Modal - Handle both .book-btn and generic buttons with data-service
+    const bookButtons = document.querySelectorAll('button[data-service], .book-btn');
     bookButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             const serviceName = btn.getAttribute('data-service') || 'Consultation';
             if (serviceInput) serviceInput.value = serviceName;
-            if (modal) modal.classList.remove('hidden');
+            if (modal) {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            }
         });
     });
 
     // Close Modal
     function closeModal() {
-        if (modal) modal.classList.add('hidden');
+        if (modal) {
+            modal.classList.add('hidden');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
     }
 
     if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
@@ -53,35 +50,56 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // WhatsApp Logic
+    // Booking Form WhatsApp Logic
     if (bookingForm) {
         bookingForm.addEventListener('submit', (e) => {
             e.preventDefault();
 
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const service = document.getElementById('service-input').value;
-            const date = document.getElementById('date').value;
+            const name = document.getElementById('name')?.value || '';
+            const phone = document.getElementById('phone')?.value || '';
+            const service = document.getElementById('service-input')?.value || 'Consultation';
+            const date = document.getElementById('date')?.value || '';
 
             if (!name || !phone || !date) {
                 alert('Veuillez remplir tous les champs obligatoires.');
                 return;
             }
 
-            // Classic Professional Message
-            // Bonjour, je voudrais prendre rendez-vous pour [Service] le [Date]. Nom: [Nom].
-            const message = `Bonjour, je voudrais prendre rendez-vous pour ${service} le ${date}.\nNom: ${name}.\nMerci.`;
+            const message = `Bonjour, je souhaite prendre rendez-vous.\nService: ${service}\nDate souhaitée: ${date}\nNom: ${name}\nTéléphone: ${phone}`;
             const encodedMessage = encodeURIComponent(message);
-            const phoneNumber = '212661234567'; // Realistic dummy
+            const phoneNumber = '212661234567'; // Replace with real number
 
-            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-
-            window.open(whatsappUrl, '_blank');
+            window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
 
             setTimeout(() => {
                 closeModal();
                 bookingForm.reset();
             }, 500);
+        });
+    }
+
+    // Contact Form WhatsApp Logic
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('form-name')?.value || '';
+            const phone = document.getElementById('form-phone')?.value || '';
+            const messageText = document.getElementById('form-message')?.value || '';
+
+            if (!name || !phone || !messageText) {
+                alert('Veuillez remplir tous les champs obligatoires.');
+                return;
+            }
+
+            const message = `Bonjour, nouveau message depuis le site web.\nNom: ${name}\nTéléphone: ${phone}\nMessage: ${messageText}`;
+            const encodedMessage = encodeURIComponent(message);
+            const phoneNumber = '212661234567'; // Replace with real number
+
+            window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+
+            // Optional: Show success feedback
+            contactForm.reset();
         });
     }
 });

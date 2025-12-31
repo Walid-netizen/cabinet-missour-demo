@@ -3,12 +3,39 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Cabinet Médical Missour</title>
+    <title>Cabinet Médical Missour - Nos Services</title>
+    <meta name="description"
+        content="Découvrez nos services médicaux : Consultation générale, ECG, Échographie, Suivi chronique et visites à domicile à Missour.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Nos Services - Cabinet Médical Missour">
+    <meta property="og:description"
+        content="Soins complets pour toute la famille : ECG, Échographie, Pédiatrie et Urgences.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cabinet-missour.ma/services.html">
+
+    <!-- Preload -->
+    <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style">
+    <link rel="preload" href="style.css" as="style">
+
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                    }
+                }
+            }
+        }
+    </script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
@@ -16,7 +43,7 @@
 
     <!-- Header / Navigation (Glass) -->
     <header class="glass-header fixed w-full top-0 z-50 transition-all duration-300">
-        <div class="container h-24 flex justify-between items-center">
+        <div class="container py-4 flex justify-between items-center flex-nowrap">
             <a href="index.html" class="flex items-center gap-4 group">
                 <div class="relative">
                     <div
@@ -29,8 +56,9 @@
                     <span class="text-xs text-blue-600 font-medium uppercase tracking-[0.2em]">Médecine & Avenir</span>
                 </div>
             </a>
+            <!-- Desktop Menu -->
             <nav
-                class="flex gap-1 items-center bg-white/50 px-2 py-2 rounded-full border border-white/50 backdrop-blur-sm">
+                class="hidden md:flex gap-1 items-center bg-white/50 px-2 py-2 rounded-full border border-white/50 backdrop-blur-sm">
                 <a href="index.html"
                     class="px-5 py-2 rounded-full text-slate-600 hover:text-blue-600 hover:bg-white/50 transition">Accueil</a>
                 <a href="services.html"
@@ -41,32 +69,35 @@
                 <a href="contact.html"
                     class="px-5 py-2 rounded-full text-slate-600 hover:text-blue-600 hover:bg-white/50 transition">Contact</a>
             </nav>
-            <div>
-                <a href="services.html" class="btn-modern">
-                    <span>Prendre Rendez-vous</span>
+
+            <!-- CTA & Mobile Toggle -->
+            <div class="flex items-center gap-4">
+                <a href="services.html" class="hidden md:inline-flex btn-modern">
+                    <span>Prendre RDV</span>
                     <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
-                <!-- Hamburger (Mobile) -->
-                <button id="mobile-menu-btn" class="mobile-menu-btn hidden text-slate-800 p-2 md:hidden">
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-800 hover:text-blue-600 transition">
                     <i data-lucide="menu" class="w-8 h-8"></i>
                 </button>
             </div>
         </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobile-menu"
+            class="fixed inset-0 z-40 bg-white/95 backdrop-blur-xl transform translate-x-full transition-transform duration-300 md:hidden flex flex-col justify-center items-center gap-8">
+            <button id="close-mobile-menu" class="absolute top-6 right-6 text-slate-500 hover:text-red-500">
+                <i data-lucide="x" class="w-8 h-8"></i>
+            </button>
+            <a href="index.html" class="text-2xl font-bold text-slate-900">Accueil</a>
+            <a href="services.html" class="text-2xl font-bold text-slate-600 hover:text-blue-600">Services</a>
+            <a href="about.html" class="text-2xl font-bold text-slate-600 hover:text-blue-600">Le Docteur</a>
+            <a href="contact.html" class="text-2xl font-bold text-slate-600 hover:text-blue-600">Contact</a>
+            <a href="services.html" class="btn-modern text-xl px-8 py-3 mt-4">Prendre RDV</a>
+        </div>
     </header>
 
-    <!-- Mobile Menu Drawer (Static) -->
-    <div id="mobile-menu" class="mobile-menu-drawer">
-        <button class="absolute top-6 right-6 text-slate-800 p-2" id="close-mobile-menu">
-            <i data-lucide="x" class="w-8 h-8"></i>
-        </button>
-        <nav class="flex flex-col items-center gap-8 text-2xl font-bold text-slate-800">
-            <a href="index.html" class="hover:text-blue-600 transition">Accueil</a>
-            <a href="services.html" class="hover:text-blue-600 transition">Nos Services</a>
-            <a href="about.html" class="hover:text-blue-600 transition">Le Docteur</a>
-            <a href="contact.html" class="hover:text-blue-600 transition">Contact</a>
-        </nav>
-        <a href="services.html" class="btn-modern mt-8 px-8 py-4 text-lg">Prendre Rendez-vous</a>
-    </div>
+
 
     <main class="pt-32 pb-20">
 

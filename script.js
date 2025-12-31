@@ -8,46 +8,30 @@ document.addEventListener('DOMContentLoaded', () => {
             duration: 800,
             easing: 'ease-out',
             once: true,
-            offset: 50
+            offset: 50,
+            disable: 'mobile' // Disable on mobile devices
         });
     }
 
     // =========================================
     // MOBILE NAVIGATION
     // =========================================
-    const headerContainer = document.querySelector('header .container');
-    if (headerContainer) {
-        // 1. Create Hamburger Button
-        const burgerBtn = document.createElement('button');
-        burgerBtn.className = 'mobile-menu-btn hidden text-slate-800 p-2'; // hidden by default, shown by CSS media query
-        burgerBtn.innerHTML = `<i data-lucide="menu" class="w-8 h-8"></i>`;
-        headerContainer.appendChild(burgerBtn);
+    // =========================================
+    // MOBILE NAVIGATION (Static)
+    // =========================================
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeBtn = document.getElementById('close-mobile-menu');
 
-        // 2. Create Mobile Menu Overlay
-        const mobileMenu = document.createElement('div');
-        mobileMenu.className = 'fixed inset-0 bg-white/95 backdrop-blur-xl z-[60] flex flex-col items-center justify-center gap-8 transition-transform duration-300 translate-x-full';
-        mobileMenu.innerHTML = `
-            <button class="absolute top-6 right-6 text-slate-800 p-2" id="close-mobile-menu">
-                <i data-lucide="x" class="w-8 h-8"></i>
-            </button>
-            <nav class="flex flex-col items-center gap-6 text-2xl font-bold text-slate-800">
-                <a href="index.html" class="hover:text-blue-600 transition">Accueil</a>
-                <a href="services.html" class="hover:text-blue-600 transition">Nos Services</a>
-                <a href="about.html" class="hover:text-blue-600 transition">Le Docteur</a>
-                <a href="contact.html" class="hover:text-blue-600 transition">Contact</a>
-            </nav>
-            <a href="services.html" class="btn-modern mt-4">Prendre Rendez-vous</a>
-        `;
-        document.body.appendChild(mobileMenu);
-
-        // 3. Logic
-        burgerBtn.addEventListener('click', () => {
+    if (mobileBtn && mobileMenu && closeBtn) {
+        // Open
+        mobileBtn.addEventListener('click', () => {
             mobileMenu.classList.remove('translate-x-full');
             document.body.style.overflow = 'hidden';
-            if (window.lucide) lucide.createIcons(); // Refresh icons inside menu
+            if (window.lucide) lucide.createIcons();
         });
 
-        const closeBtn = mobileMenu.querySelector('#close-mobile-menu');
+        // Close
         closeBtn.addEventListener('click', () => {
             mobileMenu.classList.add('translate-x-full');
             document.body.style.overflow = '';
@@ -60,11 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.body.style.overflow = '';
             });
         });
-
-        // Refresh icons for new elements
-        if (window.lucide) {
-            setTimeout(() => lucide.createIcons(), 100);
-        }
     }
 
     // Modal Logic

@@ -54,7 +54,7 @@ body {
 }
 
 .glass-panel {
-    background: rgba(255, 255, 255, 0.65);
+    background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.5);
@@ -205,14 +205,40 @@ body {
     backdrop-filter: blur(8px);
 }
 
-/* --- Hero Background --- */
-.hero-bg {
-    background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.5)), url('https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=1000&auto=format&fit=crop');
+/* --- Full Page Backgrounds --- */
+body {
+    min-height: 100vh;
+    background-color: #0f172a;
+    /* Dark fallback */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    position: relative;
-    isolation: isolate;
+    color: #f1f5f9;
+    /* Light text default */
+}
+
+body.bg-home {
+    background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.5), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=1000&auto=format&fit=crop');
+}
+
+body.bg-services {
+    background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1579684385136-137af18db23d?q=80&w=1000&auto=format&fit=crop');
+}
+
+body.bg-about {
+    background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=1000&auto=format&fit=crop');
+}
+
+body.bg-contact {
+    background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.9)), url('https://images.unsplash.com/photo-1516574187841-69301905a304?q=80&w=1000&auto=format&fit=crop');
+}
+
+/* Cleanup Legacy Hero */
+.hero-bg-base {
+    background: transparent;
+    /* Remove generic hero bg */
+    min-height: auto;
+    padding-top: 0;
 }
 
 /* --- Navigation Active State --- */
@@ -245,13 +271,9 @@ body {
         padding-right: 1.5rem;
     }
 
-    .hero-bg {
+    body {
         background-attachment: scroll;
-        /* Fixes mobile parallax jank */
-        padding-top: 8rem;
-        /* More space for fixed header */
-        min-height: 100dvh;
-        /* Dynamic Viewport Height */
+        /* Prevent jitter */
     }
 
     h1 {
